@@ -1,0 +1,6 @@
+name:        GhostHunt
+version:     ${project.version}
+main:        net.nekcraft.ghosthunt.Ghosthunt
+api-version: 1.17
+authors: [ Nektwork, SKINMAKER ]
+description: GhostHunt
