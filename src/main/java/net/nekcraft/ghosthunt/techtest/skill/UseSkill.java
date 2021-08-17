@@ -64,12 +64,8 @@ public class UseSkill implements Listener {
 				ghostScream(p);
 			}
 		}
-
-
 	}
 	private void ghostScream(Player source) {
-
-
 		Location sourceLocation = source.getLocation();
 
 		for(Player target : Bukkit.getOnlinePlayers()) {
@@ -78,9 +74,8 @@ public class UseSkill implements Listener {
 					new BukkitRunnable(){
 						int counter = 0;
 						double posX, posY, posZ;
-						public void run(){
-							float randomDir1 = (float) (Math.random() * 50) - 25;
-							float randomDir2 = (float) (Math.random() * 50) - 25;
+
+						public void run() {
 							Location targetLocation = target.getLocation();
 							if(counter == 0) {
 								posX = targetLocation.getX();
@@ -92,12 +87,12 @@ public class UseSkill implements Listener {
 								targetLocation.setY(posY);
 								targetLocation.setZ(posZ);
 							}
-							targetLocation.setPitch(targetLocation.getPitch() + randomDir1);
-							targetLocation.setYaw(targetLocation.getYaw() + randomDir2);
+							targetLocation.setPitch(targetLocation.getPitch() + 2.5f);
+							targetLocation.setYaw(targetLocation.getYaw() + -50);
 							target.teleport(targetLocation);
 
-							float randomSound = (float) (Math.random() * 1.5f) - 0.5f;
-							double randomXZ = (Math.random() * 1) - 0.5;
+							float  randomSound = (float) (Math.random() * 1.5f) - 0.5f;
+							double randomXZ    = (Math.random() * 1) - 0.5;
 							source.getWorld().playSound(target.getLocation(), Sound.BLOCK_NOTE_BLOCK_HAT, 0.5f, randomSound);
 							source.getWorld().spawnParticle(Particle.WATER_DROP, target.getLocation(), 10, randomXZ, 1.25, randomXZ);
 
@@ -107,7 +102,8 @@ public class UseSkill implements Listener {
 					}.runTaskTimer(plugin, 0L, 0L);
 
 					// 플레이어가 비명을 지른다
-					source.getWorld().playSound(target.getLocation(), Sound.ENTITY_COW_HURT, 1.0f, 1.3f);
+					source.getWorld().playSound(target.getLocation(), Sound.ENTITY_COW_HURT, 1.0f, 0.7f);
+					source.getWorld().playSound(source.getLocation(), Sound.ENTITY_BAT_DEATH, 0.5f, 0.5f);
 				}
 			}
 		}

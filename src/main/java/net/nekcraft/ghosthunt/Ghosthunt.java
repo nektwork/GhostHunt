@@ -22,6 +22,6 @@ public final class Ghosthunt extends JavaPlugin {
 	}
 
 	public void registerCommands() {
-		// this.getCommand("home").setExecutor(new CommandHome());
+		this.getCommand("ght").setExecutor(new ghtest());
 	}
 }

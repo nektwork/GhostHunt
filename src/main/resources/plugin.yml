@@ -4,3 +4,8 @@ main:        net.nekcraft.ghosthunt.Ghosthunt
 api-version: 1.17
 authors: [ Nektwork, SKINMAKER ]
 description: GhostHunt
+commands:
+  ght:
+    description: Your description
+    usage: /<command>
+    permission: yourplugin.yourcommandpermission
