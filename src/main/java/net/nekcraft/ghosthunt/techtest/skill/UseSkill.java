@@ -55,10 +55,10 @@ public class UseSkill implements Listener {
 
 		if(e.getItem() != null) {
 
-			Boolean isSlotHand = e.getHand() == EquipmentSlot.HAND;
-			Boolean isHandItem = e.getItem().getType().equals(Material.DIRT);
-			Boolean isRightAir = e.getAction().equals(Action.RIGHT_CLICK_AIR);
-			Boolean isRightBlock = e.getAction().equals(Action.RIGHT_CLICK_BLOCK);
+			boolean isSlotHand = e.getHand() == EquipmentSlot.HAND;
+			boolean isHandItem = e.getItem().getType().equals(Material.DIRT);
+			boolean isRightAir = e.getAction().equals(Action.RIGHT_CLICK_AIR);
+			boolean isRightBlock = e.getAction().equals(Action.RIGHT_CLICK_BLOCK);
 
 			if (isSlotHand && isHandItem && (isRightAir || isRightBlock)) {
 				ghostScream(p);
